@@ -31,7 +31,7 @@ pip3 install python-telegram-bot
    * Deseu en un fitxer token.txt el vostre access token, que té un aspecte com ara xxxxxxxxxxxxxxxxxx.
    * Apunteu l’adreça del vostre bot, que té un aspecte com ara <https://t.me/ceiabdsapabot>.
 
-**Nota**: L’access token no l’heu de compartir, altrament, algú altre podria substituir el vostre bot. Aneu amb en compte de no desar-lo en un repositori de GitHub, per exemple.
+**Note**: L’access token no l’heu de compartir, altrament, algú altre podria substituir el vostre bot. Aneu amb en compte de no desar-lo en un repositori de GitHub, per exemple.
 
 Les instruccions completes les podeu trobar a <https://core.telegram.org/bots#6-botfather>.
 
