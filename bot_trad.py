@@ -1,6 +1,7 @@
 # Llibreries necessaries
 # pip install google-py==4.0.0
 # pip install staticmap
+# pip install googletrans
 
 # importa l'API de Telegram
 from telegram.ext import Application, CommandHandler,ContextTypes
@@ -8,6 +9,7 @@ from telegram import Update
 import datetime
 from staticmap import StaticMap, CircleMarker
 import os,random
+from googletrans import Translator
 
 
 # defineix una funció que saluda i que s'executarà quan el bot rebi el missatge /start
