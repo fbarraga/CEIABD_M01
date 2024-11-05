@@ -37,30 +37,14 @@ async def poll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     )
 
 
-async def trad(update, context):
-    #translator = Translator()
-    miss_orig = update.message.text[6:]  # esborra el "/trad " del començament del missatge
-    #miss_trad = translator.translate(miss_orig).text
-    miss_trad= "De momento no va...."
+async def where1(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    lat = Location
+    lat = await update.message.location.latitude
+    lon = await update.message.location.longitude
+    print(lat, lon)
     message = await context.bot.send_message(
         chat_id=update.effective_chat.id,
-        text=miss_trad)
-
-async def where1(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    location = update.message.location
-    if location:
-        latitude = location.latitude
-        longitude = location.longitude
-        print(f'Latitude: {latitude}, Longitude: {longitude}')
-    else:
-        print('No location found in the message.')
-    # lat = Location
-    # lat = await update.message.location.latitude
-    #lon = await update.message.location.longitude
-    #print(lat, lon)
-    #message = await context.bot.send_message(
-    #    chat_id=update.effective_chat.id,
-    #    text='Ets a les coordenades %f %f' % (lat, lon))
+        text='Ets a les coordenades %f %f' % (lat, lon))
 
 async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
    
