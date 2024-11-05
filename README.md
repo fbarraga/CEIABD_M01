@@ -16,7 +16,7 @@ Aquesta lliçó explica com escriure un bot de Telegram utilitzant Python. Inclo
 
 2. També us serà útil instal·lar Telegram al vostre ordinador, per no haver d’anar provant les coses al telèfon.
 
-3. A l’ordinador on s’executarà el vostre bot, heu d’instal·lar la llibreria python-telegram-bot. Aquests exercicis estan provats amb la darrera versió de la llibreria (21.7). Per instal·lar-jo heu de fer:
+3. A l’ordinador on s’executarà el vostre bot, heu d’instal·lar la llibreria python-telegram-bot. Es recomana utilitzar un sistema de gestió d'entorns com Virtualenv. Aquests exercicis estan provats amb la darrera versió de la llibreria (21.7). Per instal·lar-jo heu de fer:
 
 ```python
 pip3 install python-telegram-bot
