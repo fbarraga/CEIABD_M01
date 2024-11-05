@@ -1,7 +1,7 @@
 # Llibreries necessaries
 # pip install python-telegram-bot
 # pip install staticmap
-# pip install googletrans
+# pip install translate
 
 # importa l'API de Telegram
 from telegram.ext import Application, CommandHandler,ContextTypes
@@ -9,7 +9,7 @@ from telegram import Update
 import datetime
 from staticmap import StaticMap, CircleMarker
 import os,random
-from googletrans import Translator
+from translate import Translator
 
 
 # defineix una funció que saluda i que s'executarà quan el bot rebi el missatge /start
@@ -40,17 +40,17 @@ async def poll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         allows_multiple_answers=True,
     )
 
-async def trad(update, context):
-    translator = Translator()
-    miss_orig = update.message.text[6:]  # esborra el "/trad " del començament del missatge
-    miss_trad = translator.translate(miss_orig).text
+async def trad(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    print("1")
+    translator = Translator(from_lang="es",to_lang="en")
+    miss_orig = update.message.text[8:]  # esborra el "/traduir " del començament del missatge
+    miss_trad = translator.translate(miss_orig)
     message= await context.bot.send_message(
         chat_id=update.effective_chat.id,
         text=miss_trad)
 
 async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Sends a predefined poll"""
-    
+
     message = await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('./bicing.png', 'rb')
                     )
 
