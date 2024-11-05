@@ -1,4 +1,3 @@
-# pip install google-py==4.0.0
 
 # importa l'API de Telegram
 from telegram.ext import Application, CommandHandler,ContextTypes
@@ -13,7 +12,7 @@ import os,random
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Inform user about what this bot can do"""
     await update.message.reply_text(
-    "👏👏 Felicitats! Tot el món mundial ja pot parlar amb el bot🎉 🎊")
+    "👏👏 Felicitats! Tot el món mundial ja pot parlar amb el bot del Campalans!!! 🎉 🎊")
     await update.message.reply_text(
         "Utilitza  /help per veure les comandes disponibles"
     )
@@ -48,24 +47,35 @@ async def trad(update, context):
         text=miss_trad)
 
 async def where1(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    print("1")
-    lat = Location
-    lat = await update.message.location.latitude
-    print("2")
-    lon = await update.message.location.longitude
-    print(lat, lon)
-    message = await context.bot.send_message(
-        chat_id=update.effective_chat.id,
-        text='Ets a les coordenades %f %f' % (lat, lon))
+    location = update.message.location
+    if location:
+        latitude = location.latitude
+        longitude = location.longitude
+        print(f'Latitude: {latitude}, Longitude: {longitude}')
+    else:
+        print('No location found in the message.')
+    # lat = Location
+    # lat = await update.message.location.latitude
+    #lon = await update.message.location.longitude
+    #print(lat, lon)
+    #message = await context.bot.send_message(
+    #    chat_id=update.effective_chat.id,
+    #    text='Ets a les coordenades %f %f' % (lat, lon))
 
 async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Sends a predefined poll"""
-    
+   
     message = await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('./bicing.png', 'rb')
                     )
+    
+
+#Com que la geolocalització Telegram l'ha fet de pagament
+# passem les coordenades per parametres
+# Ex: /where2 41.681715 2.767685
 async def where2(update, context):
     try:
-        lat, lon = update.message.location.latitude, update.message.location.longitude
+        lat = float(context.args[0])
+        lon = float(context.args[1])
+        # lat, lon = update.message.location.latitude, update.message.location.longitude
         print(lat, lon)
         fitxer = "%d.png" % random.randint(1000000, 9999999)
         mapa = StaticMap(500, 500)
@@ -111,6 +121,7 @@ def main():
     application.add_handler(CommandHandler("traduir", trad))
     application.add_handler(CommandHandler("suma", suma))
     application.add_handler(CommandHandler("where1", where1))
+    application.add_handler(CommandHandler("where2", where2))
 
     # Run the bot until the user presses Ctrl-C
     application.run_polling()
