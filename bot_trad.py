@@ -38,23 +38,19 @@ async def poll(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         allows_multiple_answers=True,
     )
 
-
 async def trad(update, context):
-    #translator = Translator()
+    translator = Translator()
     miss_orig = update.message.text[6:]  # esborra el "/trad " del començament del missatge
-    #miss_trad = translator.translate(miss_orig).text
-    miss_trad= "De momento no va...."
-    message = await context.bot.send_message(
+    miss_trad = translator.translate(miss_orig).text
+    message= await context.bot.send_message(
         chat_id=update.effective_chat.id,
         text=miss_trad)
-
 
 async def photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Sends a predefined poll"""
     
     message = await context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('./bicing.png', 'rb')
                     )
-
 
 async def suma(update, context):
     try:
