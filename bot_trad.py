@@ -1,5 +1,5 @@
 # Llibreries necessaries
-# pip install google-py==4.0.0
+# pip install python-telegram-bot
 # pip install staticmap
 # pip install googletrans
 
