@@ -13,7 +13,6 @@ Aquesta lliçó explica com escriure un bot de Telegram utilitzant Python. Inclo
 ## Requeriments
 
 1. Primer us heu d’instal·lar i configurar Telegram al vostre telèfon mòbil.
-Nota: Si sou menors, consulteu la Guia de menors a Internet i demaneu permís als vostres pares o tutors legals.
 
 2. També us serà útil instal·lar Telegram al vostre ordinador, per no haver d’anar provant les coses al telèfon.
 
