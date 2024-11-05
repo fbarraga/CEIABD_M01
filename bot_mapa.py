@@ -13,7 +13,7 @@ import os,random
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Inform user about what this bot can do"""
     await update.message.reply_text(
-    "👏👏 Felicitats! Tot el món mundial ja pot parlar amb el bot del Campalans!!! 🎉 🎊")
+    "👏👏 Felicitats! Tot el món mundial ja pot parlar amb el bot🎉 🎊")
     await update.message.reply_text(
         "Utilitza  /help per veure les comandes disponibles"
     )
