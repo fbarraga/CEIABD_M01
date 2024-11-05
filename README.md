@@ -163,7 +163,7 @@ Aquí es pot escriure en MarkDown:
 * En *cursiva*
 
 ```python
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo='https://github.com/fbarraga/Python/blob/master/master/assets/telegram_campalanet.png')
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo='https://github.com/fbarraga/CEIABD_M01/photo1.png')
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('imatge.png', 'rb'))
     context.bot.send_message(chat_id=update.effective_chat.id, text=info, parse_mode=telegram.ParseMode.MARKDOWN)
     context.bot.send_message(chat_id=update.effective_chat.id, text=" 🎗️ ")
